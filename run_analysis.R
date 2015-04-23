@@ -39,3 +39,6 @@ for(i in 1:length(levels(newdata$subject))){
   }
   tidydata=rbind(tidydata, v)
 }
+tidydatawide=tidydata
+tidydatanarrow=melt(tidydata, id.vars=c("subject", "activity"))
+colnames(tidydatanarrow)=c("subject", "activity", "feature", "average")
