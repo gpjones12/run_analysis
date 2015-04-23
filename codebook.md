@@ -1,27 +1,36 @@
 Codebook of Variables in run_analysis Script
 
-train: reads X_train.txt from UCI HAR Dataset. All UCI HAR Dataset files must be in working directory in order for script to run correctly.
-  train_activities: reads y_train.txt file from dataset.
-  subject_train: reads subject_train.txt from dataset.
-  train: binds the train data and the activities and the subject so that there is a table of all data for the train data.
+subject: a group of 30 volunteers within an age bracket of 19-48 years. numbers 1 through 30 are each individual subject that       performed the activities.
+
+activity: each subject performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. this variable identifies the activity that each subject performed.
+
+feature: the features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+  Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+  Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+  These signals were used to estimate variables of the feature vector for each pattern:  
+  '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+  tBodyAcc-XYZ
+  tGravityAcc-XYZ
+  tBodyAccJerk-XYZ
+  tBodyGyro-XYZ
+  tBodyGyroJerk-XYZ
+  tBodyAccMag
+  tGravityAccMag
+  tBodyAccJerkMag
+  tBodyGyroMag
+  tBodyGyroJerkMag
+  fBodyAcc-XYZ
+  fBodyAccJerk-XYZ
+  fBodyGyro-XYZ
+  fBodyAccMag
+  fBodyAccJerkMag
+  fBodyGyroMag
+  fBodyGyroJerkMag
+
+  The set of variables which are included in the tidy dataset are: 
   
-test: reads X_test.txt from UCI HAR Dataset. All UCI HAR Dataset files must be in working directory in order for script to run correctly.
-  test_activities: reads y_test.txt file from dataset.
-  subject_test: reads subject_test.txt from dataset.
-  test: binds the test data and the activities and the subject so that there is a table of all data for the test data.
+  mean(): Mean value
+  std(): Standard deviation
   
-data: combines train and test data into one dataset. this is the data that will be turned into tidy data.
-
-features: reads table of features from the dataset. these will be added as the column names.
-
-means: the data that has the word "mean" in the dataset will be pulled out as a table and set to this variable.
-
-stds: the data that has the word "std" in the dataset will be pulled out as a table and set to this variable.
-
-newdata: new data that is now the means and standard deviations of the overall dataset.
-
-activity_labels: reads in table of activity labels. these will be converted to the values in the activities in newdata so that there are descriptions of the           
-  activities.
-  
-tidydata: 3 for loops (2 within 1 for loop) are ran to take the averages for each variable for the subject and the activity. this data is set to tidydata as the 
-  table which has the tidy data in it (the data that is an average for each of the subjects and activities). this is the data to be sent to coursera.
+average: average of each feature for each activity and each subject.
