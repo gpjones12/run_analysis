@@ -1,4 +1,4 @@
-# run_analysis - r script that runs data analysis on UCI HAR Dataset. This dataset must first be downloaded and saved in working directory in order for script to run properly.
+# run_analysis - r script that runs data analysis on UCI HAR Dataset. This dataset must first be downloaded and saved in working directory in order for script to run properly. tidydata can be converted to either the wide tidy data set (tidydatawide) or the narrow data set (tidydatanarrow - this is the data set described in the code book for each of the four variables).
 
 train: reads X_train.txt from UCI HAR Dataset. All UCI HAR Dataset files must be in working directory in order for script to run correctly. train_activities: reads y_train.txt file from dataset. subject_train: reads subject_train.txt from dataset. train: binds the train data and the activities and the subject so that there is a table of all data for the train data.
 
